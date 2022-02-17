@@ -1,0 +1,14 @@
+<h1>Lists#index</h1>
+
+<%= link_to 'New list', new_list_path, class: 'btn btn-primary' %>
+
+<hr>
+
+<ul>
+<% @lists.each do |list| %>
+  <li>
+    <%= list.name %>
+    <%= link_to 'display', list_path(list) %>
+  </li>
+<% end %>
+</ul>

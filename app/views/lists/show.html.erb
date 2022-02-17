@@ -1,0 +1,22 @@
+<h1>List: <%= @list.name %></h1>
+
+<h3>Movie list:</h3>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+  <li>
+    <%= bookmark.movie.title %>
+    <%= bookmark.comment %>
+    <%= link_to bookmark_path(bookmark),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+    delete<i class="fa-regular fa-trash-can"></i>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+<%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+
+<hr>
+
+<%= link_to 'All lists', lists_path, class: 'btn btn-primary' %>
