@@ -1,14 +1,61 @@
-<h1>Lists#index</h1>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to lists_path, class: "navbar-brand" do %>
+      <%= image_tag "noun-cinema-2871124 (turquoise).png" %>
+      <span class="text-color-turquoise">Movies</span>
+    <% end %>
 
-<%= link_to 'New list', new_list_path, class: 'btn btn-primary' %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<hr>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<ul>
-<% @lists.each do |list| %>
-  <li>
-    <%= list.name %>
-    <%= link_to 'display', list_path(list) %>
-  </li>
-<% end %>
-</ul>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/karen-zhao-jLRIsfkWRGo-unsplash.jpg);">
+  <div class="container">
+    <h1><span class="text-color-turquoise">Movies</span>, mes <strong>listes</strong> de films et séries à voir</h1>
+    <p>version originale sous-titrée</p>
+  </div>
+</div>
+
+<div class="container my-3">
+  <div class="cards-header">
+    <h3>Mes listes</h3>
+    <%= link_to 'Je crée une nouvelle liste', new_list_path, class: 'btn btn-flat' %>
+  </div>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(/assets/daniel-jensen-NMk1Vggt2hg-unsplash.jpg)">
+        <%= link_to list_path(list) do %>
+        <span class="text-color-turquoise"><%= list.name %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
