@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +14,8 @@
 
 .navbar-lewagon a {
   color: #03cdfd;
+}
+
+.navbar-lewagon-black {
+  background: black;
 }

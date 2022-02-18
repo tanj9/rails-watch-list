@@ -12,3 +12,13 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import { Controller } from "@hotwired/stimulus"
+
+export default class extends Controller {
+  connect() {
+    console.log("hello from navbar_controller!")
+  }
+}
+
+import "controllers"
