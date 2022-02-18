@@ -9,10 +9,12 @@
 require "json"
 require "open-uri"
 
-puts 'emptying movie table'
+puts '1. emptying movie table'
 Movie.destroy_all
+# List.destroy_all ==> /!\ check that the seed works before uncommenting this line
+# Bookmark.destroy_all ==> /!\ check that the seed works before uncommenting this line
 
-puts 'start seeding'
+puts '2. start seeding movies'
 
 (500..600).to_a.each do |movie_id|
   basic_url = 'https://api.themoviedb.org/3/movie/'
@@ -36,28 +38,30 @@ puts 'start seeding'
 end
 
 puts "created #{Movie.count} movies"
+
+puts "3. start seeding lists"
+
+# List Wallace and Gromit
+
+file = URI.open('/assets/wallace & gromit.jpg')
+list = List.new(name: 'Wallace & Gromit')
+list.photo.attach(io: file, filename: 'wallace_and_gromit.jpg', content_type: 'image/jpg')
+list.save!
+puts "created Wallace & Gromit list"
+
+file = URI.open('/assets/nouvelle vague.jpg')
+list = List.new(name: 'Art House')
+list.photo.attach(io: file, filename: 'nouvelle_vague.jpg', content_type: 'image/jpg')
+list.save!
+puts "created Art House list"
+
+file = URI.open('/assets/trainspotting_poster.jpg')
+list = List.new(name: '10 movies I wanna watch')
+list.photo.attach(io: file, filename: 'trainspotting.jpg', content_type: 'image/jpg')
+list.save!
+puts "created 10 movies I wanna watch list"
+
+puts "4. start seeding bookmarks"
+puts "still to be done"
+
 puts "done seeding"
-
-
-
-
-# 320: rue Londres?
-# https://i.picsum.photos/id/320/2689/1795.jpg?hmac=RbcHvJKkKfsAdlsQWzGT-F31XZcRP-O89MeKyDaeads
-
-# 342:
-# https://i.picsum.photos/id/342/2896/1944.jpg?hmac=_2cYDHi2iG1XY53gvXOrhrEWIP5R5OJlP7ySYYCA0QA
-
-# 403: machine à écrire
-# https://i.picsum.photos/id/403/3997/2665.jpg?hmac=l04T0quGocuZKSo0CxAJ7aC8CivbrCWV0X0dCzqvb0Y
-
-# 4: crayon carnet
-# https://i.picsum.photos/id/4/5616/3744.jpg?hmac=8wIoVTScZoSiagRtRYlNfcd7dYHEf9tGyyEF44ihYFI
-
-# 687: lunette panorama
-# https://i.picsum.photos/id/687/4288/2848.jpg?hmac=NXlF4vW4yF8Er6EDhQ7llR8JFZnwAqBX-kG0BnP68vY
-
-# 861: télé dans le sable
-# https://i.picsum.photos/id/861/5760/3840.jpg?hmac=b3YRc6_Qa18A_rD5L1tXCxP-0LRybGduFJjrlMa5htM
-
-# 998: stylo à plume / carnet
-# https://i.picsum.photos/id/998/6016/4016.jpg?hmac=Y8UPKinJhmRWK9I1x0CDmHdAF0LpucNG9XhKmJ5qbME
