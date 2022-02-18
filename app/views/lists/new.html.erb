@@ -1,13 +1,10 @@
-<h1>New list</h1>
-
-<p>list details:</p>
-
-<%= simple_form_for @list do |f| %>
-<%= f.input :name %>
-<%= f.input :photo, as: :file %>
-<%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
-<hr>
-
-<%= link_to 'List index', root_path, class: 'btn btn-primary' %>
+<div id="new-banner" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/861-5760x3840.jpg);">
+  <div class="container">
+    <h2 class="text-color-turquoise">New list</h2>
+    <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'btn-flat' %>
+    <% end %>
+  </div>
+</div>

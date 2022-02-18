@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key, crop: :fit %>');">
   <div class="container">
-    <h1 class="text-color-turquoise">List: <%= @list.name %></h1>
+    <h1 class="text-color-turquoise"><%= @list.name %></h1>
   </div>
 </div>
 
@@ -25,9 +25,6 @@
 
     <% end %>
 
-  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-primary' %>
+  <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn-flat' %>
+
 </div>
-
-<hr>
-
-<%= link_to 'All lists', root_path, class: 'btn btn-primary' %>

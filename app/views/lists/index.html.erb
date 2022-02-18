@@ -1,22 +1,23 @@
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/karen-zhao-jLRIsfkWRGo-unsplash.jpg);">
+<div id="home-banner" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/karen-zhao-jLRIsfkWRGo-unsplash.jpg);">
   <div class="container">
-    <h1><span class="text-color-turquoise">Movies</span>, mes <strong>listes</strong> de films et séries à voir</h1>
+    <h1 class="text-color-turquoise">Movies</h1>
+    <h2>My <span class="text-color-turquoise"><strong>personal lists</strong></span> of films and series to watch</h2>
     <p><span data-controller="typed-js"></span></p>
   </div>
 </div>
 
 <div class="container my-3">
   <div class="cards-header">
-    <h3>Mes listes</h3>
-    <%= link_to 'Je crée une nouvelle liste', new_list_path, class: 'btn btn-flat' %>
+    <h3>My lists</h3>
+    <%= link_to 'I create a new list', new_list_path, class: 'btn btn-flat' %>
   </div>
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list&.photo&.key %>')">
-        <%= link_to list_path(list) do %>
-        <span class="text-color-turquoise"><%= list.name %></span>
-        <% end %>
-      </div>
+      <%= link_to list_path(list) do %>
+        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list&.photo&.key %>')">
+          <span class="text-color-turquoise"><%= list.name %></span>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

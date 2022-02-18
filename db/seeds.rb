@@ -37,3 +37,27 @@ end
 
 puts "created #{Movie.count} movies"
 puts "done seeding"
+
+
+
+
+# 320: rue Londres?
+# https://i.picsum.photos/id/320/2689/1795.jpg?hmac=RbcHvJKkKfsAdlsQWzGT-F31XZcRP-O89MeKyDaeads
+
+# 342:
+# https://i.picsum.photos/id/342/2896/1944.jpg?hmac=_2cYDHi2iG1XY53gvXOrhrEWIP5R5OJlP7ySYYCA0QA
+
+# 403: machine à écrire
+# https://i.picsum.photos/id/403/3997/2665.jpg?hmac=l04T0quGocuZKSo0CxAJ7aC8CivbrCWV0X0dCzqvb0Y
+
+# 4: crayon carnet
+# https://i.picsum.photos/id/4/5616/3744.jpg?hmac=8wIoVTScZoSiagRtRYlNfcd7dYHEf9tGyyEF44ihYFI
+
+# 687: lunette panorama
+# https://i.picsum.photos/id/687/4288/2848.jpg?hmac=NXlF4vW4yF8Er6EDhQ7llR8JFZnwAqBX-kG0BnP68vY
+
+# 861: télé dans le sable
+# https://i.picsum.photos/id/861/5760/3840.jpg?hmac=b3YRc6_Qa18A_rD5L1tXCxP-0LRybGduFJjrlMa5htM
+
+# 998: stylo à plume / carnet
+# https://i.picsum.photos/id/998/6016/4016.jpg?hmac=Y8UPKinJhmRWK9I1x0CDmHdAF0LpucNG9XhKmJ5qbME

@@ -1,12 +1,12 @@
-<h1>Add a movie to the list: <%= @list.name %></h1>
-
-<%= simple_form_for [@list, @bookmark] do |f| %>
-<%= f.association :movie %>
-<%= f.input :comment %>
-<%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
-<hr>
-
-<%= link_to 'Back to the list', list_path(@list), class: 'btn btn-primary' %>
-<%= link_to 'All lists', root_path, class: 'btn btn-primary' %>
+<div id="new-banner" class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(/assets/403-3997x2665.jpg);">
+  <div class="container">
+    <h2>Add a movie to the <%= link_to list_path(@list) do %>
+      <span class="text-color-turquoise"><%= @list.name %></span>
+    <% end %> list</h2>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie, collection: Movie.order(:title) %>
+    <%= f.input :comment %>
+    <%= f.submit 'Add movie', class: 'btn-flat'%>
+    <% end %>
+  </div>
+</div>
