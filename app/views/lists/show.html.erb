@@ -4,7 +4,6 @@
   </div>
 </div>
 
-
 <div class="container mt-3">
   <h3 class="mb-3">Movie list:</h3>
 
@@ -14,11 +13,12 @@
         <%= image_tag bookmark.movie.poster_url %>
         <div class="card-product-infos">
           <h2><%= bookmark.movie.title %></h2>
-          <p><%= bookmark.comment %></p>
+          <p><%= bookmark.movie.overview %></p>
+          <p>My comment: <%= bookmark.comment %></p>
           <%= link_to bookmark_path(bookmark),
                   method: :delete,
                   data: { confirm: "Are you sure?" } do %>
-          delete <i class="fa-regular fa-trash-can"></i>
+          <i class="fas fa-trash"></i>
           <% end %>
         </div>
       </div>
